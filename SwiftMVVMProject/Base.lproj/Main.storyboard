@@ -1,21 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Student List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StudentListViewController" customModule="SwiftMVVMProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCu-gC-mNw">
+                                <rect key="frame" x="8" y="28" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-Rd-4Ob">
+                                <rect key="frame" x="8" y="66" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltN-Al-FpB">
+                                <rect key="frame" x="155.5" y="104" width="64" height="30"/>
+                                <state key="normal" title="Add Data"/>
+                                <connections>
+                                    <action selector="addDataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdi-iO-fMq"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Obx-xL-VJv">
+                                <rect key="frame" x="8" y="142" width="359" height="517"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SXr-HJ-ro6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tC3-Xe-y7E"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zCu-gC-mNw" secondAttribute="trailing" constant="8" id="2eg-zF-4qy"/>
+                            <constraint firstItem="ltN-Al-FpB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="62K-iT-fXX"/>
+                            <constraint firstItem="zCu-gC-mNw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="EX5-jd-e0J"/>
+                            <constraint firstItem="Obx-xL-VJv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="O7x-JB-IGo"/>
+                            <constraint firstItem="F9M-Rd-4Ob" firstAttribute="top" secondItem="zCu-gC-mNw" secondAttribute="bottom" constant="8" id="Q8A-eL-vc2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Obx-xL-VJv" secondAttribute="bottom" constant="8" id="WBa-Bj-NAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F9M-Rd-4Ob" secondAttribute="trailing" constant="8" id="d7L-bH-RCi"/>
+                            <constraint firstItem="Obx-xL-VJv" firstAttribute="top" secondItem="ltN-Al-FpB" secondAttribute="bottom" constant="8" id="oHQ-Yl-w6p"/>
+                            <constraint firstItem="F9M-Rd-4Ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="qOG-bD-1GI"/>
+                            <constraint firstItem="zCu-gC-mNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="rFH-7L-LPF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Obx-xL-VJv" secondAttribute="trailing" constant="8" id="vL1-GW-lRd"/>
+                            <constraint firstItem="ltN-Al-FpB" firstAttribute="top" secondItem="F9M-Rd-4Ob" secondAttribute="bottom" constant="8" id="x2q-s4-5GC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addressTF" destination="F9M-Rd-4Ob" id="zj4-IA-aWg"/>
+                        <outlet property="nameTF" destination="zCu-gC-mNw" id="r49-XN-RCz"/>
+                        <outlet property="studentInfoTable" destination="Obx-xL-VJv" id="33A-nX-DBK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

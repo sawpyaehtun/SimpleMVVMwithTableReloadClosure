@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		37F4A6C721E48F1F00F787FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6C621E48F1F00F787FA /* AppDelegate.swift */; };
-		37F4A6C921E48F1F00F787FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6C821E48F1F00F787FA /* ViewController.swift */; };
+		37F4A6C921E48F1F00F787FA /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6C821E48F1F00F787FA /* StudentListViewController.swift */; };
 		37F4A6CC21E48F1F00F787FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F4A6CA21E48F1F00F787FA /* Main.storyboard */; };
 		37F4A6CE21E48F2100F787FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F4A6CD21E48F2100F787FA /* Assets.xcassets */; };
 		37F4A6D121E48F2100F787FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F4A6CF21E48F2100F787FA /* LaunchScreen.storyboard */; };
 		37F4A6DC21E48F2100F787FA /* SwiftMVVMProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6DB21E48F2100F787FA /* SwiftMVVMProjectTests.swift */; };
 		37F4A6E721E48F2100F787FA /* SwiftMVVMProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6E621E48F2100F787FA /* SwiftMVVMProjectUITests.swift */; };
+		37F4A6F821E48FD200F787FA /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6F721E48FD200F787FA /* Student.swift */; };
+		37F4A6FA21E4906700F787FA /* StudentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6F921E4906700F787FA /* StudentListViewModel.swift */; };
+		37F4A6FE21E4932000F787FA /* StudentInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F4A6FC21E4932000F787FA /* StudentInfoTableViewCell.swift */; };
+		37F4A6FF21E4932000F787FA /* StudentInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F4A6FD21E4932000F787FA /* StudentInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		37F4A6C321E48F1F00F787FA /* SwiftMVVMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMVVMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F4A6C621E48F1F00F787FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37F4A6C821E48F1F00F787FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37F4A6C821E48F1F00F787FA /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		37F4A6CB21E48F1F00F787FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37F4A6CD21E48F2100F787FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37F4A6D021E48F2100F787FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		37F4A6E221E48F2100F787FA /* SwiftMVVMProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMVVMProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F4A6E621E48F2100F787FA /* SwiftMVVMProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMVVMProjectUITests.swift; sourceTree = "<group>"; };
 		37F4A6E821E48F2100F787FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F4A6F721E48FD200F787FA /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		37F4A6F921E4906700F787FA /* StudentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewModel.swift; sourceTree = "<group>"; };
+		37F4A6FC21E4932000F787FA /* StudentInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoTableViewCell.swift; sourceTree = "<group>"; };
+		37F4A6FD21E4932000F787FA /* StudentInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +105,11 @@
 		37F4A6C521E48F1F00F787FA /* SwiftMVVMProject */ = {
 			isa = PBXGroup;
 			children = (
+				37F4A6FB21E492EF00F787FA /* Views */,
+				37F4A6F621E48FAB00F787FA /* ViewModels */,
+				37F4A6F521E48F9B00F787FA /* Models */,
+				37F4A6F421E48F7E00F787FA /* ViewControllers */,
 				37F4A6C621E48F1F00F787FA /* AppDelegate.swift */,
-				37F4A6C821E48F1F00F787FA /* ViewController.swift */,
 				37F4A6CA21E48F1F00F787FA /* Main.storyboard */,
 				37F4A6CD21E48F2100F787FA /* Assets.xcassets */,
 				37F4A6CF21E48F2100F787FA /* LaunchScreen.storyboard */,
@@ -123,6 +134,39 @@
 				37F4A6E821E48F2100F787FA /* Info.plist */,
 			);
 			path = SwiftMVVMProjectUITests;
+			sourceTree = "<group>";
+		};
+		37F4A6F421E48F7E00F787FA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				37F4A6C821E48F1F00F787FA /* StudentListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37F4A6F521E48F9B00F787FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37F4A6F721E48FD200F787FA /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37F4A6F621E48FAB00F787FA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				37F4A6F921E4906700F787FA /* StudentListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		37F4A6FB21E492EF00F787FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37F4A6FC21E4932000F787FA /* StudentInfoTableViewCell.swift */,
+				37F4A6FD21E4932000F787FA /* StudentInfoTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +276,7 @@
 				37F4A6D121E48F2100F787FA /* LaunchScreen.storyboard in Resources */,
 				37F4A6CE21E48F2100F787FA /* Assets.xcassets in Resources */,
 				37F4A6CC21E48F1F00F787FA /* Main.storyboard in Resources */,
+				37F4A6FF21E4932000F787FA /* StudentInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F4A6C921E48F1F00F787FA /* ViewController.swift in Sources */,
+				37F4A6FA21E4906700F787FA /* StudentListViewModel.swift in Sources */,
+				37F4A6C921E48F1F00F787FA /* StudentListViewController.swift in Sources */,
+				37F4A6F821E48FD200F787FA /* Student.swift in Sources */,
 				37F4A6C721E48F1F00F787FA /* AppDelegate.swift in Sources */,
+				37F4A6FE21E4932000F787FA /* StudentInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
